@@ -45,11 +45,11 @@ poetry install
 ### Run the Application
 #### To Run CLI Application
 ```bash
-python app.py
+python main.py
 ```
 
 #### To Run Web Application
 ```bash
-streamlit run main.py
+streamlit run UI.py
 ```
 
