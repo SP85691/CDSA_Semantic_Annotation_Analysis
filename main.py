@@ -48,25 +48,55 @@ def get_dataset_data_types(path):
 
     return result
 
+def convert_data_types(data_types):
+    converted_types = []
+    for data_type in data_types:
+        if data_type == "URL":
+            converted_types.append("URL")
+        elif data_type == "Name":
+            converted_types.append("Name")
+        elif data_type == "Constituency":
+            converted_types.append("Constituency")
+        elif data_type == "Datetime":
+            converted_types.append("Datetime")
+        elif data_type == "String":
+            converted_types.append("String")
+        elif data_type == "State":
+            converted_types.append("State")
+        elif data_type == "Address":
+            converted_types.append("Address")
+        elif data_type == "Integer" or data_type == "Float":
+            converted_types.append("Integer")
+    return converted_types
+
+def convert_to_json(column_names, data_types):
+    json_result = {}
+    for column_name, data_type in zip(column_names, data_types):
+        json_result[column_name] = data_type
+    return json_result
+
 def MakeinOrder(path):
     with open(path, "r") as f:
         contents = f.read()
 
-    # load the JSON data from the string
+    # Load the JSON data from the file
     result = json.loads(contents)
 
-    print("Column Names:", ", ".join(result["column_names"]))
-    print("Data Types:")
-    for column_name, data_type in zip(result["column_names"], result["data_types"]):
-        if data_type == "{'Values': 'URL'}":
-            data_type = "URL"
-        print(f"{column_name}: {data_type}")
+    converted_data_types = convert_data_types(result["data_types"])
+    json_output = convert_to_json(result["column_names"], converted_data_types)
+
+    print(json.dumps(json_output, indent=2))
+    
+    # Save the final output back to the same file path
+    with open(path, "w") as f:
+        json.dump(json_output, f, indent=2)
         
 if __name__ == "__main__":
-    path = "Data/test.csv"
+    path = "Data/mizoram_result.csv"
     result = get_dataset_data_types(path)
-    jsonpath = "Data/result.txt"
-    with open(jsonpath, "a") as f:
+    
+    jsonpath = "Data/result2.json"
+    with open(jsonpath, "w") as f:
         f.write(json.dumps(result) + "\n")
         
     MakeinOrder(jsonpath)
