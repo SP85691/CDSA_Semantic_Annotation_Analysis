@@ -1,0 +1,9 @@
+{
+  "Country": "Location",
+  "State": "Location",
+  "Year": "Time",
+  "Ministry Or Department Name": "Categorical",
+  "Direct Benefit Transfer (Dbt) Scheme Name": "Categorical",
+  "Direct Benefit Transfer (Dbt) Scheme Benefit Type": "Categorical",
+  "Direct Benefit Transfer (Dbt) Fund Transferred (UOM:INR(IndianRupees))": "Numerical"
+}

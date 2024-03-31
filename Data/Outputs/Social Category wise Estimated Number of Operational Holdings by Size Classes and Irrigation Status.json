@@ -1,0 +1,18 @@
+{
+  "Country": "Location",
+  "State": "Location",
+  "District": "Location",
+  "Year": "Time",
+  "Social Group Type": "Categorical",
+  "Land Area Size": "Numerical",
+  "Category Of Holdings": "Categorical",
+  "Wholly Irrigated Holdings (UOM:Number)": "Numerical",
+  "Area Of Wholly Irrigated Holdings (UOM:Ha(Hectares))": "Numerical",
+  "Wholly Unirrigated Holdings (UOM:Number)": "Numerical",
+  "Area Of Wholly Unirrigated Holdings (UOM:Ha(Hectares))": "Numerical",
+  "Partially Irrigated Holdings (UOM:Number)": "Numerical",
+  "Irrigated Area Of Partially Irrigated Holdings (UOM:Ha(Hectares))": "Numerical",
+  "Area Of Partially Irrigated Holdings (UOM:Ha(Hectares))": "Numerical",
+  "Holdings Receiving Irrigation (UOM:Number)": "Numerical",
+  "Net Irrigated Area Of Holdings Receiving Irrigation (UOM:Ha(Hectares))": "Numerical"
+}

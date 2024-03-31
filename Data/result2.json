@@ -1,8 +1,0 @@
-{
-  "Profile_Picture": "URL",
-  "Total_Votes": "Integer",
-  "Name": "Name",
-  "Party": "Name",
-  "Constituency": "Constituency",
-  "Date_Time": "Datetime"
-}

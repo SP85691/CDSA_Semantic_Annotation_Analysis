@@ -1,0 +1,9 @@
+{
+  "Country": "Location",
+  "State": "Location",
+  "Year": "Time",
+  "Month": "Time",
+  "Name Of The Fertilizer Used": "Categorical",
+  "Required Fertilizer Quantity (UOM:MT(Metrictonne))": "Numerical",
+  "Available Fertilizer Quantity (UOM:MT(Metrictonne))": "Numerical"
+}

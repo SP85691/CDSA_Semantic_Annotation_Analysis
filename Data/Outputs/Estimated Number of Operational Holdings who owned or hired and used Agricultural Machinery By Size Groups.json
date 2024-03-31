@@ -1,0 +1,11 @@
+{
+  "Country": "Location",
+  "State": "Location",
+  "District": "Location",
+  "Year": "Time",
+  "Size Of Holdings In Hectares": "Numerical",
+  "Agricultural Machine Or Equipment Type": "Categorical",
+  "Agricultural Machine Or Equipment Name": "Categorical",
+  "Owned/Hired": "Categorical",
+  "Agricultural Machines Or Equipments (UOM:Number)": "Numerical"
+}

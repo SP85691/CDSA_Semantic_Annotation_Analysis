@@ -3,7 +3,6 @@ import json
 from dotenv import load_dotenv
 import pandas as pd
 import openai
-import langchain
 
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -22,7 +21,7 @@ def get_column_data_type(column):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant You have received an information about political candidates. Your task is to understand the semantic data type of each column in the dataset. Analyze the values in each column to determine the appropriate data type. Some columns may contain specific types of data such as names, addresses, dates, etc. Your goal is to provide the semantic data type for each column in the dataset. Use the following categories for semantic data types: Name, Constituency, State, Address, URL, Integer, String, Datetime, and Float/Integer for age. You have to give output in just single word"},
+            {"role": "system", "content": "You are a helpful assistant, Your task is to understand the semantic data type of each column in the dataset. Analyze the values in each column to determine the appropriate data type. Use the following categories for semantic data types: Numerical, Location, Categorical, Time, URL. You have to give output in just single word"},
             {"role": "user", "content": prompt}
         ]
     )
@@ -48,56 +47,39 @@ def get_dataset_data_types(path):
 
     return result
 
-def convert_data_types(data_types):
-    converted_types = []
-    for data_type in data_types:
-        if data_type == "URL":
-            converted_types.append("URL")
-        elif data_type == "Name":
-            converted_types.append("Name")
-        elif data_type == "Constituency":
-            converted_types.append("Constituency")
-        elif data_type == "Datetime":
-            converted_types.append("Datetime")
-        elif data_type == "String":
-            converted_types.append("String")
-        elif data_type == "State":
-            converted_types.append("State")
-        elif data_type == "Address":
-            converted_types.append("Address")
-        elif data_type == "Integer" or data_type == "Float":
-            converted_types.append("Integer")
-    return converted_types
-
-def convert_to_json(column_names, data_types):
-    json_result = {}
-    for column_name, data_type in zip(column_names, data_types):
-        json_result[column_name] = data_type
-    return json_result
-
 def MakeinOrder(path):
     with open(path, "r") as f:
         contents = f.read()
 
     # Load the JSON data from the file
     result = json.loads(contents)
+    print(f"Result: {result}")
 
-    converted_data_types = convert_data_types(result["data_types"])
-    json_output = convert_to_json(result["column_names"], converted_data_types)
+    # Map column names to their corresponding data types
+    column_data_map = dict(zip(result["column_names"], result["data_types"]))
 
-    print(json.dumps(json_output, indent=2))
-    
     # Save the final output back to the same file path
     with open(path, "w") as f:
-        json.dump(json_output, f, indent=2)
+        json.dump(column_data_map, f, indent=2)
+    
+    print(json.dumps(column_data_map, indent=2))
         
 if __name__ == "__main__":
-    path = "Data/mizoram_result.csv"
-    result = get_dataset_data_types(path)
-    
-    jsonpath = "Data/result2.json"
-    with open(jsonpath, "w") as f:
-        f.write(json.dumps(result) + "\n")
-        
-    MakeinOrder(jsonpath)
-    
+    # Define the path to the CSV file
+    csv_path = "Data/TestFiles/newFile2.csv"
+
+    file_name = os.path.splitext(os.path.basename(csv_path))[0]
+
+    # Extract dataset information and data types
+    result = get_dataset_data_types(csv_path)
+
+    # Define the path to save the JSON result
+    json_path = f"Data/Outputs/{file_name}.json"
+
+    # Save the result as JSON
+    with open(json_path, "w") as json_file:
+        json.dump(result, json_file, indent=2)
+
+    # Update the JSON file with column names mapped to data types
+    MakeinOrder(json_path)
+

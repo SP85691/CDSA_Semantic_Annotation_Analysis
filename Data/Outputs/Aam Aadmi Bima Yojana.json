@@ -1,0 +1,10 @@
+{
+  "Country": "Location",
+  "State": "Location",
+  "Year": "Time",
+  "New Lives Covered Under Aam Aadmi Bima Yojana (Aaby) (UOM:Number)": "Numerical",
+  "Claims Setteled Under Aam Aadmi Bima Yojana (Aaby) Claims Settled Includes Death, Accident And Disability Claims (UOM:Number)": "Numerical",
+  "Amount Of Claims Setteled Under Aam Aadmi Bima Yojana (Aaby) , Claims Settled Includes Death, Accident And Disability Claims (UOM:INR(IndianRupees))": "Numerical",
+  "Scholarships Paid Under Aam Aadmi Bima Yojana (Aaby) (UOM:Number)": "Numerical",
+  "Amount Of Scholarships Paid Under Aam Aadmi Bima Yojana (Aaby) (UOM:INR(IndianRupees))": "Numerical"
+}

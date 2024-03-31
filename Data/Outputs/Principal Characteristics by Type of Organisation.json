@@ -1,0 +1,19 @@
+{
+  "Country": "Location",
+  "Year": "Time",
+  "Type Of Organisation ": "Categorical",
+  "Number Of Factories (UOM:Number)": "Numerical",
+  "Fixed Capital (UOM:INR(IndianRupees))": "Numerical",
+  "Productive Capital (UOM:INR(IndianRupees))": "Numerical",
+  "Invested Capital (UOM:INR(IndianRupees))": "Numerical",
+  "Number Of Workers (UOM:Number)": "Numerical",
+  "Number Of Total Persons Engaged (UOM:Number)": "Numerical",
+  "Wages To Workers (UOM:INR(IndianRupees))": "Numerical",
+  "Total Emoluments (UOM:INR(IndianRupees))": "Numerical",
+  "Total Input (UOM:INR(IndianRupees))": "Numerical",
+  "Total Output (UOM:INR(IndianRupees))": "Numerical",
+  "Depreciation (UOM:INR(IndianRupees))": "Numerical",
+  "Net Value Added (UOM:INR(IndianRupees))": "Numerical",
+  "Rent Paid (UOM:INR(IndianRupees))": "Numerical",
+  "Interest Paid (UOM:INR(IndianRupees))": "Numerical"
+}
