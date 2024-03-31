@@ -21,7 +21,7 @@ def get_column_data_type(column):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant, Your task is to understand the semantic data type of each column in the dataset. Analyze the values in each column to determine the appropriate data type. Use the following categories for semantic data types: Numerical, Location, Categorical, Time, URL. You have to give output in just single word"},
+            {"role": "system", "content": "You are a helpful assistant, Your task is to understand the semantic data type of each column in the dataset. Analyze the values in each column to determine the appropriate data type. Use the following categories for semantic data types: Numerical, Location, Categorical, Time, URL, HTML. You have to give output in just single word"},
             {"role": "user", "content": prompt}
         ]
     )
@@ -66,7 +66,7 @@ def MakeinOrder(path):
         
 if __name__ == "__main__":
     # Define the path to the CSV file
-    csv_path = "Data/TestFiles/newFile2.csv"
+    csv_path = "Data/TestFiles/mizoram_accepted.csv"
 
     file_name = os.path.splitext(os.path.basename(csv_path))[0]
 

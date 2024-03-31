@@ -1,0 +1,17 @@
+{
+  "Party_accepted": "Categorical",
+  "Status_accepted": "Categorical",
+  "State_accepted": "Location",
+  "Constituency_accepted": "Location",
+  "View More Link_accepted": "URL",
+  "candidate_html_source_accepted": "HTML",
+  "Name_accepted": "Categorical",
+  "Profile Picture_accepted": "URL",
+  "Application Uploaded_accepted": "Time",
+  "Affidavit Download Link_accepted": "URL",
+  "Affidavit Uploaded Date_accepted": "Time",
+  "Father's Name_accepted": "Categorical",
+  "Gender_accepted": "Categorical",
+  "Address_accepted": "Location",
+  "Age_accepted": "Numerical"
+}
